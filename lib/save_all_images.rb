@@ -1,9 +1,5 @@
 
-# require 'uri'
-# URI.join(base, url).to_s
-
 require 'nokogiri'
-# require 'open-air'
 require 'open-uri'
 
 class ImgGet
@@ -11,9 +7,6 @@ class ImgGet
     @url = input_url
     img_run
   end
-
-# doc = Nokogiri::HTML(open(@url))
-
 
   def img_run
     Nokogiri::HTML(open(@url)).xpath("//img/@src").each do |src|
